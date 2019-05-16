@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+    <ion-title>Muebles</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/vistacategoria"></ion-back-button>
+    </ion-buttons>
+    <ion-button  [routerLink]="['/ordenpedidomuebles']" slot="end" >
+        <ion-icon style="color:rgb(235, 242, 243)"  name="cart" slot="icon-only" ></ion-icon>
+            <ion-badge color="light"
+                      class="carrito-numero" 
+                      *ngIf="todoService.items.length > 0">{{todoService.items.length}}</ion-badge>  
+        </ion-button>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar showCancelButton (ionInput)="filterList($event)"></ion-searchbar>
+    <ion-list>
+      <ion-item *ngFor="let todo of todos">
+          <ion-item lines="inset" button [routerLink]="['/producto', todo.id]">
+            <ion-thumbnail item-start>
+                <img src="https://firebasestorage.googleapis.com/v0/b/forestalalfa-79b4c.appspot.com/o/{{todo.imagen}}.png?alt=media&token={{downloadTokens}}">     
+               </ion-thumbnail>
+            <ion-label> <p><strong>Nombre:</strong>
+              {{todo.nombre}}
+            </p>
+           <p><strong>Largo: </strong>{{todo.largo}}</p> 
+           <p><strong>Ancho: </strong> {{todo.ancho}}</p>
+           <p><strong> Altura: </strong>{{todo.altura}}</p> 
+           
+          </ion-label> 
+        </ion-item>       
+      </ion-item>
+    </ion-list>
+
+</ion-content>

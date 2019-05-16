@@ -1,3 +1,58 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane>
+    <ion-menu>
+      <ion-header>
+        <ion-toolbar color="primary">
+            <ion-item color="primary" lines="none">
+                <ion-thumbnail item-start>
+                    <img src="./assets/imgs/alfa.png">
+                     </ion-thumbnail>
+                 <ion-label > 
+                   <h3 style="color:rgb(241, 238, 237)"><strong>Forestal Alfa S.A de C.V</strong> </h3> 
+                   
+                  </ion-label > 
+               </ion-item>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        
+          <ion-list  lines="none">
+              <ion-list-header>
+                  <h5 style="color:rgb(121, 46, 16)" ><strong> Conoce Tambien...</strong></h5>
+                </ion-list-header>
+              <ion-item href="http://www.forestalalfa.com.mx/divisiones/molduras">
+                <ion-icon style="color:rgb(121, 46, 16)"  slot="start" name="globe"></ion-icon>
+                <ion-label  >Molduras</ion-label>
+              </ion-item>
+              <ion-item href="http://forestalalfa.com.mx/harinera/es/">
+                <ion-icon style="color:rgb(121, 46, 16)"  slot="start" name="globe"></ion-icon>
+                <ion-label >Harinera La Providencia </ion-label>
+              </ion-item>
+           </ion-list>
+          
+          
+          
+            <ion-list lines="none">
+              <ion-list-header>
+                <h5 style="color:rgb(121, 46, 16)" ><strong>Siguenos en...</strong> </h5>
+              </ion-list-header>
+              <ion-item href="http://www.forestalalfa.com.mx/">
+                <ion-icon style="color:rgb(121, 46, 16)"  slot="start" name="globe"></ion-icon>
+                <ion-label >Página Oficial </ion-label>
+              </ion-item>
+              <ion-item href="https://www.facebook.com/ForestalAlfaSaDeCv/">
+                <ion-icon style="color:rgb(121, 46, 16)"  slot="start"  name="logo-facebook"></ion-icon>
+                <ion-label >Facebook</ion-label>
+              </ion-item>
+              <ion-item href="https://www.youtube.com/user/FORESTALALFA/featured">
+                <ion-icon style="color:rgb(121, 46, 16)" slot="start"  name="logo-youtube"></ion-icon>
+                <ion-label>Youtube </ion-label>
+              </ion-item>
+            
+            </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

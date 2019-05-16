@@ -1,5 +1,7 @@
 {
   "name": "AppForestalAlfa",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

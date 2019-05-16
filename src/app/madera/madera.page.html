@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Productos Madera</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/categoria"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let todo of todos">
+      <ion-item lines="inset" button [routerLink]="['/addmadera', todo.id]">
+      
+        <ion-label>  <p><strong> Nombre: </strong>
+          {{todo.nombre}}
+          </p>
+         <p><strong>Grueso:</strong> {{todo.grueso}}</p> 
+         <p><strong>Largo: </strong> {{todo.largo}}</p>
+         <p><strong>Calidad: </strong> {{todo.clase}}</p>
+         <p><strong>Condición:</strong>{{todo.ancho}}</p>
+         <p><strong>Presentación por bulto: </strong>{{todo.bulto}}</p>
+        </ion-label>
+      </ion-item>
+    
+
+    </ion-item>
+  </ion-list>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button routerLink = "/addmadera" routerDirection= "forward">
+ <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+
+</ion-fab>
+</ion-content>

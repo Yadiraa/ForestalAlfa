@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Muebles</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/vistamuebles"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        
+       
+                <img src="https://firebasestorage.googleapis.com/v0/b/forestalalfa-79b4c.appspot.com/o/{{todoM.imagen}}.png?alt=media&token={{downloadTokens}}">
+                <ion-item *ngIf="todoM">
+        <p><strong>Nombre: </strong>{{todoM.nombre}} <br>
+        <strong>Largo: </strong>{{todoM.largo}} <br>
+        <strong>Ancho: </strong>{{todoM.ancho}} <br>
+        <strong>Altura: </strong>{{todoM.altura}} <br>
+        <strong>Descripción: </strong>{{todoM.descripcion}} <br>
+      </p>
+        </ion-item>
+    <h5 text-center >Ingrese cantidad de piezas</h5>
+    <ion-item>
+    <ion-label><strong>Cantidad de piezas: </strong></ion-label>
+    <ion-input required type="number"  [(ngModel)]="todoM.numero" #numero1></ion-input>
+  </ion-item>
+    </ion-list>
+
+    <ion-button (click)="todoService.agregar_carrito(todoM)"><ion-icon name="cart"></ion-icon>Añadir al trailer</ion-button>
+    <ion-button  [routerLink]="['/ordenpedidomuebles']">orden</ion-button>
+    
+</ion-content>

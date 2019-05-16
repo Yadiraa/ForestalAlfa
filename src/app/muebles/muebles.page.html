@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Muebles</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/pedidomuebles"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let todo of todos">
+          <ion-item lines="inset" button [routerLink]="['/addmuebles', todo.id]">
+            <ion-thumbnail item-start>
+                <img src="https://firebasestorage.googleapis.com/v0/b/forestalalfa-79b4c.appspot.com/o/{{todo.imagen}}.png?alt=media&token={{downloadTokens}}">     
+               </ion-thumbnail>
+            <ion-label> <p><strong>Nombre:</strong>  {{todo.nombre}} </p>
+              <p><strong>Largo: </strong>{{todo.largo}}</p> 
+              <p><strong>Ancho: </strong> {{todo.ancho}}</p>
+              <p><strong> Altura: </strong>{{todo.altura}}</p> 
+              <p><strong>Descripción: </strong> {{todo.descripcion}}</p>
+          </ion-label>
+          </ion-item>
+        </ion-item>
+      </ion-list>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button routerLink = "/addmuebles" routerDirection= "forward">
+     <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

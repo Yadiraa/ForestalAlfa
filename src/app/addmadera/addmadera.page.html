@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Agregar Madera</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/madera"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+    <ion-button
+    shape="round"
+    (click)="camara()">
+  <ion-icon slot="start" name="camera"></ion-icon>Camara</ion-button>
+
+<ion-button
+  shape="round"
+  (click)="libreria()">
+<ion-icon slot="start" name="images"></ion-icon>Galeria</ion-button>
+
+<ion-row>
+  <ion-col size="6" *ngFor="let image of tempImages">
+    <ion-card>
+      <img [src]="image">
+    </ion-card>
+
+  </ion-col>
+</ion-row>
+
+  <ion-list lines="full">
+
+      <ion-item *ngIf="todo">
+          <ion-label><strong>Nombre: </strong></ion-label>
+          <ion-input required type="text" [(ngModel)]="todo.nombre" #nombre1></ion-input>
+            </ion-item>
+    
+      <ion-item *ngIf="todo">
+     <ion-label><strong>Grueso: </strong></ion-label>
+    <ion-input required type="text"[(ngModel)]="todo.grueso" #grueso1></ion-input>
+      </ion-item>
+  
+          <ion-item *ngIf="todo">
+              <ion-label><strong>Largo: </strong></ion-label>
+            <ion-input required type="text"[(ngModel)]="todo.largo" #largo1></ion-input>
+              </ion-item>
+              <ion-item *ngIf="todo">
+                  <ion-label><strong>Calidad: </strong></ion-label>
+                <ion-input required type="text"[(ngModel)]="todo.clase" #clase1></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="todo">
+                      <ion-label><strong>Condición: </strong></ion-label>
+                    <ion-input required type="text" [(ngModel)]="todo.ancho" #ancho1></ion-input>
+                      </ion-item>
+                      <ion-item *ngIf="todo">
+                        <ion-label><strong>Presentación por bulto: </strong></ion-label>
+                      <ion-input required type="text" [(ngModel)]="todo.bulto" #bulto1></ion-input>
+                        </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="validarCampos()" shape="round" fill="outline"> <ion-icon name="md-folder-open"></ion-icon>
+    Guardar
+  </ion-button>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+  <ion-fab-button color="danger" routerLink = "/madera" routerDirection= "forward" (click)="onRemove(todoId)" >
+ <ion-icon name="trash"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>

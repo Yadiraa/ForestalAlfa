@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Triplay</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/vistatriplay"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list lines="full">
+    
+        <ion-item *ngIf="todoT">
+            <ion-label><strong>Nombre: </strong></ion-label>
+      <ion-input disabled = "true" required type="text"  [(ngModel)]="todoT.nombre"></ion-input>
+        </ion-item>
+   <ion-item *ngIf="todoT">
+     <ion-label><strong>Dimensión: </strong></ion-label>
+  <ion-input disabled = "true" required type="text"  [(ngModel)]="todoT.dimension"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todoT">
+        <ion-label><strong>Espesor: </strong></ion-label>
+   <ion-input disabled = "true" required type="text"  [(ngModel)]="todoT.espesor"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todoT">
+        <ion-label><strong>Especie: </strong></ion-label>
+<ion-input disabled = "true" required type="text"  [(ngModel)]="todoT.especie"></ion-input>
+ </ion-item>
+   <ion-item *ngIf="todoT">
+      <ion-label><strong>Calidad: </strong></ion-label>
+      <ion-input disabled = "true" required type="text"  [(ngModel)]="todoT.calidad"></ion-input>
+     </ion-item>
+     <ion-item *ngIf="todoT">
+        <ion-label><strong>Presentación por bulto: </strong></ion-label>
+        <ion-input disabled = "true" required type="text"  [(ngModel)]="todoT.bulto"></ion-input>
+       </ion-item>
+       <h5 text-center >Ingrese cantidad de bultos</h5>
+       <ion-item>
+          <ion-label style="color:rgb(182, 182, 172)"><strong>Cantidad de bultos: </strong></ion-label>
+          <ion-input required type="number"  [(ngModel)]="todoT.numero" #numero1></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-button  (click)="todoService.agregar_carritoT(todoT)"><ion-icon name="cart"></ion-icon>Añadir al trailer</ion-button>
+    <ion-button  [routerLink]="['/ordenpedido']">Orden</ion-button>
+</ion-content>

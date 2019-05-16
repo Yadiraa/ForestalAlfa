@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Madera</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/vistamadera"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+
+    <ion-item *ngIf="todo">
+        <ion-label><strong>Nombre: </strong></ion-label>
+        <ion-input disabled = "true" required type="text" [(ngModel)]="todo.nombre"></ion-input>
+          </ion-item>
+  
+    <ion-item *ngIf="todo">
+   <ion-label><strong>Grueso: </strong></ion-label>
+  <ion-input disabled = "true" required type="text"[(ngModel)]="todo.grueso"></ion-input>
+    </ion-item>
+
+        <ion-item *ngIf="todo">
+            <ion-label><strong>Largo: </strong></ion-label>
+          <ion-input disabled = "true" required type="text"[(ngModel)]="todo.largo"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="todo">
+                <ion-label><strong>Calidad: </strong></ion-label>
+              <ion-input disabled = "true" required type="text"[(ngModel)]="todo.clase"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="todo">
+                    <ion-label><strong>Condición: </strong></ion-label>
+                  <ion-input disabled = "true" required type="text" [(ngModel)]="todo.ancho"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="todo">
+                      <ion-label><strong>Presentación por bulto: </strong></ion-label>
+                    <ion-input disabled = "true" required type="text" [(ngModel)]="todo.bulto"></ion-input>
+                      </ion-item>
+                      <h5 text-center >Ingrese cantidad de bultos</h5>
+                      <ion-item>
+                        <ion-label style="color:rgb(182, 182, 172)" ><strong>Cantidad de bultos: </strong></ion-label>
+                        <ion-input required type="number"  [(ngModel)]="todo.numero" #numero1></ion-input>
+                      </ion-item>
+</ion-list>
+<ion-button (click)="todoService.agregar_carritoM(todo)"><ion-icon name="cart"></ion-icon>Añadir al trailer</ion-button>
+<ion-button  [routerLink]="['/ordenpedido-madera']">Orden</ion-button>
+</ion-content>

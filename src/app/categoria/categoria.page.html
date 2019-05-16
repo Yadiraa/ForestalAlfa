@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login Muebles</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="./assets/imgs/cliente.png" class="center">
+  <ion-item>
+    <ion-icon name="lock" item-left></ion-icon>
+  <ion-label><strong>Código de acceso</strong></ion-label>
+  <ion-input [(ngModel)]="contra" type="password" name="contra"></ion-input>
+</ion-item>
+<br>
+<ion-button (click)="acceder()" shape="round" fill="outline" class="center"><strong>Ingresar</strong></ion-button>
+    
+</ion-content>

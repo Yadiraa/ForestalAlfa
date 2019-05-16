@@ -1,9 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
+  <ion-toolbar color="primary">
+   
+    <ion-title text-center >
+        Iniciar Sesión
+      </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+ <br>
+  <img src="./assets/imgs/user3.png" class="center">
+  <h5 text-center>Ingresar como:</h5>
+ 
+    <ion-button [routerLink]="['/cliente']" shape="round" fill="outline" class="center"><strong>Clientes madera y triplay</strong></ion-button>
+  <br>
+  <ion-button [routerLink]="['/categoria']" shape="round" fill="outline" class="center"><strong>Clientes muebles</strong></ion-button>
+  <br>
+    <ion-button [routerLink]="['/ejecutivologin']" shape="round" fill="outline" class="center"><strong>Ejecutivos</strong></ion-button>
+    
+</ion-content>

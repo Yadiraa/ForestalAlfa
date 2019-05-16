@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title >Registro</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/cliente"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form class="form" [formGroup]="validations_form" 
+     (ngSubmit)="tryRegister(validations_form.value)">
+        <ion-item>
+          <ion-label  position="floating" color="primary"><strong>Email</strong></ion-label>
+          <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.email">
+  <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) 
+  && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <ion-item>
+          <ion-label  position="floating" color="primary"><strong>Password</strong></ion-label>
+          <ion-input type="password" formControlName="password" class="form-controll" required>
+          </ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.password">
+    <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type)
+     && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <ion-card>
+            <ion-card-content>
+                <p> Al hacer click en "Registrar" aceptas nuetro terminos y condiciones de
+                   nuestras <a target="_blank" rel="noopener" href="http://www.forestalalfa.com.mx/file/319720dd263b135f02cc48e3c876184d">politicas de privacidad</a></p>
+            </ion-card-content>
+          </ion-card>
+        
+        <ion-button  shape="round" fill="outline" class="center" type="submit" 
+        [disabled]="!validations_form.valid">Registrar</ion-button>
+        <br>
+        <label class="error-message">{{errorMessage}}</label>
+        <label class="success-message">{{successMessage}}</label>
+      </form>
+      <p class="go-to-login"> Ya tienes una cuenta? <a [routerLink]="['/cliente']">
+        Intenta iniciar sesión.</a></p>
+        </ion-content>

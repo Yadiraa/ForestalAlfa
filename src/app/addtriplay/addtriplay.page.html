@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Agregar Triplay</ion-title>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/triplay"></ion-back-button>
+        </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-button
+    shape="round"
+    (click)="camara()">
+  <ion-icon slot="start" name="camera"></ion-icon>Camara</ion-button>
+
+<ion-button
+  shape="round"
+  (click)="libreria()">
+<ion-icon slot="start" name="images"></ion-icon>Galeria</ion-button>
+
+<ion-row>
+  <ion-col size="6" *ngFor="let image of tempImages">
+    <ion-card>
+      <img [src]="image">
+    </ion-card>
+
+  </ion-col>
+</ion-row>
+
+    <ion-list lines="full">
+    
+        <ion-item *ngIf="todoT">
+            <ion-label><strong>Nombre: </strong></ion-label>
+      <ion-input required type="text"  [(ngModel)]="todoT.nombre" #nombre1></ion-input>
+        </ion-item>
+   <ion-item *ngIf="todoT">
+     <ion-label><strong>Dimensión: </strong></ion-label>
+  <ion-input required type="text"  [(ngModel)]="todoT.dimension" #dimension1></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todoT">
+        <ion-label><strong>Espesor: </strong></ion-label>
+   <ion-input required type="text"  [(ngModel)]="todoT.espesor" #espesor1></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todoT">
+        <ion-label><strong>Especie: </strong></ion-label>
+<ion-input required type="text"  [(ngModel)]="todoT.especie" #especie1></ion-input>
+ </ion-item>
+   <ion-item *ngIf="todoT">
+      <ion-label><strong>Calidad: </strong></ion-label>
+      <ion-input required type="text"  [(ngModel)]="todoT.calidad" #calidad1></ion-input>
+     </ion-item>
+     <ion-item *ngIf="todoT">
+        <ion-label><strong>Presentación por bulto: </strong></ion-label>
+        <ion-input required type="text"  [(ngModel)]="todoT.bulto" #bulto1></ion-input>
+       </ion-item>
+  
+    </ion-list>
+    <ion-button expand="full" (click)="validarCampos()" shape="round" fill="outline"> <ion-icon name="md-folder-open"></ion-icon>
+      Guardar
+    </ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+    <ion-fab-button color="danger" routerLink = "/triplay" routerDirection= "forward" (click)="onRemove(todoIdT)" >
+   <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

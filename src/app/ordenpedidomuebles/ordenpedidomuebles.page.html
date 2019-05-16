@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mi pedido</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/vistamuebles"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div  *ngIf="todoservice.items.length === 0">
+<ion-icon name="cart" class= "center"></ion-icon>
+<p text-center>Su trailer está vacío<p>
+</div>
+<div *ngIf="todoservice.items.length != 0">
+<ion-grid>
+  <ion-row *ngFor="let item of todoservice.items; let i = index;">
+    <ion-col>
+            <img src="https://firebasestorage.googleapis.com/v0/b/forestalalfa-79b4c.appspot.com/o/{{item.imagen}}.png?alt=media&token={{downloadTokens}}">
+<p><strong>Nombre: </strong>{{item.nombre}}</p>
+<p><strong>Largo: </strong>{{item.largo}}</p> 
+ <p><strong>Ancho: </strong> {{item.ancho}}</p>
+<p><strong> Altura: </strong>{{item.altura}}</p> 
+ <p><strong>Descripción: </strong> {{item.descripcion}}</p>
+<p><strong>Piezas: </strong>{{item.numero}}</p>
+
+<ion-button color="danger" shape="round"  (click)="todoservice.remove_item(i)"><ion-icon slot="start" name="trash"></ion-icon>Borrar Producto</ion-button>
+    
+</ion-col>
+  </ion-row>
+</ion-grid>
+</div>
+<ion-list>
+        <ion-item *ngIf="todo" >
+          <ion-label position="floating"><strong>Nombre: </strong></ion-label>
+    <ion-input required type="text"  [(ngModel)]="todo.cliente" #cliente1></ion-input>
+      </ion-item>
+      <ion-item *ngIf="todo" >
+        <ion-label position="floating" ><strong>Telefono: </strong></ion-label>
+  <ion-input required type="number"  [(ngModel)]="todo.telefono" #telefono1></ion-input>
+    </ion-item>
+    <ion-item *ngIf="todo">
+      <ion-label position="floating" ><strong>Código Postal: </strong></ion-label>
+<ion-input required type="number"  [(ngModel)]="todo.codigo" #codigo1></ion-input>
+  </ion-item>
+  </ion-list>
+        <ion-list>
+          <ion-list-header text-center>¿Que deseas hacer?</ion-list-header>
+          <ion-item *ngIf="todo" >
+            <ion-label>Seleccione uno</ion-label>
+            <ion-select [(ngModel)]="todo.opcion" #opcion1 okText="Okay" cancelText="Cerrar">
+              <ion-select-option value="Pedido">Realizar pedido</ion-select-option>
+              <ion-select-option value="Cotización">Pedir cotización</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+ 
+ <ion-button [routerLink]="'/vistamuebles/'"> <ion-icon slot="start" name="add"></ion-icon>Añadir más</ion-button>
+ <ion-button (click)="validarCampos()" > <ion-icon slot="start" name="checkmark" ></ion-icon>Enviar</ion-button>
+</ion-content>

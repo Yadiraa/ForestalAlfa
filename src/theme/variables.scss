@@ -2,9 +2,23 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+.carrito_vacio{
+  position: relative;
+  top: 30%;
+  font-size: 20px;
+}
+
+.icon-5x{
+font-size: 100px;
+}
+.carrito-numero{
+  position: absolute;
+  top: -1px;
+  left: 35px;
+}
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #7c0b0b;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -28,7 +42,7 @@
   --ion-color-tertiary-tint: #7e57ff;
 
   /** success **/
-  --ion-color-success: #10dc60;
+  --ion-color-success: #863709;
   --ion-color-success-rgb: 16, 220, 96;
   --ion-color-success-contrast: #ffffff;
   --ion-color-success-contrast-rgb: 255, 255, 255;
@@ -44,7 +58,7 @@
   --ion-color-warning-tint: #ffd31a;
 
   /** danger **/
-  --ion-color-danger: #f04141;
+  --ion-color-danger: #cf0c0c;
   --ion-color-danger-rgb: 245, 61, 61;
   --ion-color-danger-contrast: #ffffff;
   --ion-color-danger-contrast-rgb: 255, 255, 255;

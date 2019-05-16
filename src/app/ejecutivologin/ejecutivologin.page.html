@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab2"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 text-center ion-text color="boton">Iniciar Sesión</h1>
+  <img src="./assets/imgs/icono.jpg" class="center">
+
+    <ion-item>
+        <ion-icon name="lock" item-left></ion-icon>
+      <ion-label><strong>Código de acceso</strong></ion-label>
+      <ion-input [(ngModel)]="contra" type="password" name="contra"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="acceder()" shape="round" fill="outline" class="center"><strong>Ingresar</strong></ion-button>
+  
+    
+</ion-content>

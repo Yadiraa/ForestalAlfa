@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Productos Triplay</ion-title>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/categoria"></ion-back-button>
+        </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let todo of todos">
+          <ion-item lines="inset" button [routerLink]="['/addtriplay', todo.id]">
+        <ion-label> <p><strong>Nombre:</strong>
+            {{todo.nombre}}
+          </p>
+         <p><strong> Dimensión:</strong> {{todo.dimension}}</p> 
+         <p><strong>Espesor: </strong> {{todo.espesor}}</p>
+         <p><strong> Especie:</strong> {{todo.especie}}</p>
+         <p><strong>Calidad: </strong> {{todo.calidad}}</p>
+         <p><strong>Presentación por bulto: </strong> {{todo.bulto}}</p>
+        </ion-label> 
+          </ion-item>
+       
+        </ion-item>
+      </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button routerLink = "/addtriplay" routerDirection= "forward">
+     <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    
+    </ion-fab>
+
+</ion-content>
